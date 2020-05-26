@@ -1,0 +1,58 @@
+<div class="login-container">
+    <div class="section-login">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <div class="slider__slides">
+                  <div #register class="slider__slides__slide">
+                    <div style="margin-top: 8rem;" class="form-header">
+                    <h2 class="heading-secondary">Reset Password</h2>
+                    </div>
+                    <form style="margin-bottom: 4rem;" (ngSubmit)="onResetSubmit()" [formGroup]="resetForm" class="form">
+                        <div class="form__group">
+                            <div class="input-group">
+                            <input
+                              autocomplete="new-password"
+                              formControlName="password"
+                              type="password"
+                              required
+                              class="form__input"
+                              placeholder="Password"
+                              id="registerPassword"
+                              name="password"
+                            />
+                            <label for="password" class="form__label">
+                              Password
+                            </label>
+                            </div>
+                          </div>
+                          <div class="form__group">
+                            <div class="input-group">
+                            <input
+                              autocomplete="new-password"
+                              formControlName="confirm"
+                              type="password"
+                              class="form__input"
+                              placeholder="Confirm Password"
+                              id="confirmPassword"
+                              name="confirmPassword"
+                              required
+                            />
+                            <label for="confirmPassword" class="form__label">
+                              Confirm Password
+                            </label>
+                            </div>
+                          </div>
+                          <div style="width: 40%; margin: 0 auto; display: flex; justify-content: space-between;" class="form__group">
+                            <button (click)="goToSignIn()" class="slider__button-container-button"><ion-icon name="arrow-back-outline"></ion-icon><span style="margin-left: 1rem;">Login</span></button>
+                            <button type="submit" class="slider__button-container-button">Submit<ion-icon name="add-circle-outline"></ion-icon></button>
+                        </div>
+                    </form>
+                    <div [ngClass]="{'status-container': true, 'active': showStatus == true}">
+                        <p>{{statusText}}</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

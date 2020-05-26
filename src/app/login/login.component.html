@@ -1,0 +1,49 @@
+<div class="background">
+<div class="login-container">
+  <div class="heading-primary">
+    <span class="heading-primary--main">Welcome to DevConnect!</span>
+    <span class="heading-primary--sub">
+      <h4 class="wordCarousel">
+        <div>
+          <span>Social media for</span>
+          <ul class="flip5">
+            <li>developers</li>
+            <li>hobbyists</li>
+            <li>nerds</li>
+            <li>learning</li>
+            <li>science</li>
+          </ul> 
+        </div>
+      </h4>
+  </span>
+  </div>
+  <slider  class="login-slider" [snapPosition]="snapPosition" [initial]="1" >
+    <slider-slide>
+       <app-forgot-form></app-forgot-form>
+    </slider-slide>
+    <slider-slide>
+      <app-login-form></app-login-form>
+    </slider-slide>
+    <slider-slide [status]="loginFade">
+     <app-register-form></app-register-form>
+    </slider-slide>
+    <slider-slide>
+      <card style="margin-top: -10rem;" class="login-card">
+        <card-header style="display: flex; flex-direction: column;">
+          <h2 class="heading-secondary">Thank You!!</h2>
+        </card-header>
+        <card-content style="margin-top: 2rem;">
+          <p style="margin-top: 1rem; font-size: 1.6rem;">Thank you for registering with us! We have sent you an email with a link to confirm your account.</p>
+          <p style="margin-top: 1rem; font-size: 1.5rem;">Didn't receive an email? <button style="width: auto; height: auto; margin: 0 .2rem;" class="btn">click here</button> to get another one!</p>
+        </card-content>
+        <card-actions style="display: flex; justify-content: center; margin-top: 2rem;">
+          <div style="justify-content: center;" class="card-button-container">
+            <button (click)="snapToSignIn()" class="btn"><ion-icon name="arrow-back-outline" class="icon-left"></ion-icon><span>Sign In</span></button>
+          </div>
+      </card-actions>
+      </card>
+    </slider-slide>
+  </slider>
+</div>
+</div>
+

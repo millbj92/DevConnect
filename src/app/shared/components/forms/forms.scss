@@ -1,0 +1,127 @@
+@import 'abstracts/variables';
+@import 'base/animations';
+.form-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.form-input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 5px;
+    background-color: rgba($color-white, 0.8);
+    border: .5px solid rgba($color-black, 0.15);
+    border-bottom: .5px solid rgba($color-black, 0.15);
+    width: 50rem;
+    display: block;
+    transition: all 0.3s;
+    resize: none;
+
+    &.ng-invalid.ng-touched , &.ng-invalid.ng-dirty{ 
+      border-bottom: 3px solid $color-warn;
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      border-bottom: 3px solid $color-secondary;
+
+      &::-webkit-input-placeholder {
+        color: $color-dark-gray-2;
+      }
+    }
+  }
+
+  .input-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    float: left;
+  }
+
+  .form-input:placeholder-shown + .input-label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  .btn{
+    display: inline-flex;
+    justify-content: space-between;
+    padding-bottom: .4rem;
+    background: transparent;
+    text-decoration: none;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    background-color: transparent;
+    color: $color-primary-dark;
+    border: none;
+    border-bottom: 1px solid $color-primary-dark;
+    transition: all 0.2s;
+    outline: none;
+
+    
+  
+    &:hover {
+      //background-color: $color-primary;
+      color: $color-primary-medium;
+      border-bottom: 2px solid $color-primary-medium;
+      //box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+      transform: translateY(-2px);
+    }
+  
+    &:active {
+      color: rgba($color-dark-gray-2, .5);
+      transform: translateY(2px);
+      border-bottom: 1px solid $color-dark-gray-2;
+    }
+}
+
+.input-group{
+    position: relative;
+}
+
+.icon-left{
+    margin-right: $icon-margin;
+  }
+  
+  .icon-right{
+    margin-left: $icon-margin;
+  }
+
+  .wordCarousel {
+    div {
+      display: flex;
+      justify-content: center;
+      margin-right: 20rem;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        //float: right;
+        height: 65px;
+        padding-top: 10px;
+        margin-top: -10px;
+        display: flex;
+        ul{
+          margin-right: 13rem;
+        }
+        li {
+            max-width: 50px;
+            font-family: "Roboto Condensed", cursive;
+            color: $color-secondary-dark;
+            font-weight: 900;
+            padding: 0 10px;
+            height: 45px;
+            margin-bottom: 45px;
+            display: block;
+        }
+    }
+}

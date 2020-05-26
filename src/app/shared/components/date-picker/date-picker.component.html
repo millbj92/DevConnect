@@ -1,0 +1,41 @@
+<div class="date-group">
+    <input
+autocomplete="bday-day"
+type="date"
+class="form-input date-group-input"
+placeholder=""
+id="birthday"
+[ngModel] ="selectedDateString | date:'yyyy-MM-dd'" 
+name="birthday"
+required
+/>
+<ion-icon (click)="toggleCalendar()" class="date-group-icon" name="calendar-outline"></ion-icon>
+<div class="calendar-container">
+<div [ngClass]="calendarClass">
+    <div class="date-group-calendar-header">
+        <div class="date-group-calendar-header-nav">
+            <button (click)="changeMonth(-1)" class="btn"><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <h3>{{months[currentMonth]}}</h3>
+                <h4>{{currentYear}}</h4>
+            </div>
+            <button (click)="changeMonth(1)" class="btn"><ion-icon name="arrow-forward-circle-outline"></ion-icon></button>
+        </div>
+        <div class="date-group-calendar-header-days">
+            <h4>S</h4>
+            <h4>M</h4>
+            <h4>T</h4>
+            <h4>W</h4>
+            <h4>T</h4>
+            <h4>F</h4>
+            <h4>S</h4>
+        </div>
+    </div>
+    <div class="date-group-calendar-days">
+            <div *ngFor="let d of calendarDays; index as i">
+                <button [disabled]="!d.isInMonth" (click)="selectDate(d.date)" class="date-group-calendar-days-btn"><h4>{{d.day}}</h4></button>
+            </div>
+    </div>
+</div>
+</div>
+</div>

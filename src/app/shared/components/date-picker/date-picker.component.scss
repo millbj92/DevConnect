@@ -1,0 +1,116 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'base/typography';
+.date-group{
+
+    &-input{
+      
+      &::-webkit-inner-spin-button { display: none; }
+      &::-webkit-calendar-picker-indicator { display: none; }
+    }
+    
+    &-icon{
+      position: absolute;
+      top: 35%;
+      font-size: 1.8rem;
+      right: 1.8rem;
+      z-index: 100;
+      transition: all .2s ease;
+      color: $color-secondary-dark;
+  
+      &:hover{
+        color: $color-secondary-medium;
+        transform: translateY(-.2rem);
+        font-size: 2rem;
+      }
+  
+      &:active{
+        color: $color-secondary-dark;
+        transform: translateY(0);
+        font-size: 1.8rem;
+      }
+    }
+  
+    &-calendar{
+      width: 35rem;
+      height: 0rem;
+      transition: all 0.2s ease-in;
+      display: flex;
+      border-radius: .2rem;
+      background-color: rgba($color-white, 0.8);
+      display: flex;
+      flex-direction: column;
+  
+      &-header{
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.4);
+        flex-direction: column;
+  
+        &-nav{
+          display: flex;
+          justify-content: space-between;
+        }
+        &-days{
+          /*margin-top: 1.5rem;
+          display: flex;
+          justify-content: space-between;
+          font-size: 1rem;*/
+          align-items: center;
+          display: grid;
+          margin-top: 1.5rem;
+          grid-template-columns: repeat(7, 1fr);
+          grid-template-rows: repeat(1, 3rem);
+          justify-items: center;
+          grid-column-gap: 1rem;
+         
+        }
+      }
+  
+      &-days{
+        padding: 1rem 2rem;
+        align-items: center;
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          grid-template-rows: repeat(1, 3rem);
+          justify-items: center;
+          grid-column-gap: 1rem;
+          grid-row-gap: 1rem;
+  
+          &-btn{
+            background-color: rgba($color-white, 0.4);
+            border-radius: 5rem;
+            padding: .5rem;
+            height: 3rem;
+            width: 3rem;
+            outline: none;
+            border: 1px solid rgba($color-secondary-dark, 0.4);
+            transition: all .2s ease;
+  
+            &:hover:enabled{
+              box-shadow: $shadow-light;
+              transform: scale(1.2);
+            }
+  
+            &:active:enabled{
+              transform: scale(1);
+              background-color: $color-primary;
+              border: 1px solid rgba($color-primary, 0.4);
+            }
+          }
+      }
+    }
+  }
+  
+  .calendar-container{
+    position: absolute;
+    top: 100%;
+    overflow: hidden;
+    box-shadow: $shadow-dark;
+  }
+  
+  .calendar-active{
+    height: 35rem;
+    
+  }

@@ -1,0 +1,48 @@
+<card  class="login-card">
+    <card-header style="display: flex; flex-direction: column;">
+      <h2 class="heading-secondary">Sign In</h2>
+      <h4 [ngClass]="messageClass">{{messageText}}</h4>
+    </card-header>
+    <card-content style="margin-top: 5rem;">
+        <form [formGroup]="signinForm" (ngSubmit)="onLoginSubmit()"class="form">
+            <form-group>
+              <input
+              autocomplete="username"
+              formControlName="email"
+              type="text"
+              class="form-input"
+              placeholder="Email"
+              id="email"
+              name="email"
+              required
+            />
+            <label for="email" class="input-label">
+              Email
+            </label>
+            </form-group>
+            <form-group>
+              <input
+              autocomplete="current-password"
+              formControlName="password"
+              type="password"
+              class="form-input"
+              placeholder="Password"
+              id="password"
+              name="password"
+              required
+              onChange={this.onChange}
+            />
+            <label for="password" class="input-label">
+              Password
+            </label>
+            <button (click)="goToForgot($event)"style="width: auto; margin: 0 .2rem; position: absolute; right: 0; bottom: -1rem; font-size:1.4rem;" class="btn"><span>Forgot Password</span></button>
+            </form-group>
+            <card-actions style="display: flex; justify-content: center; margin-top: 4rem;">
+                <div class="card-button-container">
+                  <button type="submit" class="btn">Submit<ion-icon class="icon-right" name="add-circle-outline"></ion-icon></button>
+                  <button (click)="goToRegister($event)" class="btn"><span>Register</span><ion-icon class="icon-right" name="arrow-forward-outline"></ion-icon></button>
+                </div>
+            </card-actions>
+          </form>
+      </card-content>
+</card>

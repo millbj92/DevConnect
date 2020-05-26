@@ -1,0 +1,32 @@
+<card class="login-card">
+    <card-header style="display: flex; flex-direction: column; margin-top: 3rem;">
+        <h2 class="heading-secondary">Forgot Password</h2>
+        <p style="margin-top: 1rem; font-size: 1.5rem;">Please enter your email below and we will send you a link to reset your password.</p>
+        <h4 [ngClass]="messageClass">{{messageText}}</h4>
+    </card-header>
+    <card-content style="margin-top: 5rem;">
+        <form [formGroup]="forgotForm" (ngSubmit)="onForgotSubmit()"class="form">
+            <form-group>
+                <input
+                autocomplete="username"
+                formControlName="email"
+                type="text"
+                form-input
+                placeholder="Email"
+                id="forgotEmail"
+                name="email"
+                required
+                />
+                <label for="email" class="input-label">
+                    Email
+                </label>
+            </form-group>
+            <card-actions style="display: flex; justify-content: center; margin-top: 2rem;">
+                <div class="card-button-container">
+                  <button (click)="onForgotSubmit()" type="submit" class="btn">Reset<ion-icon class="icon-right" name="refresh-circle-outline"></ion-icon></button>
+                  <button type="button"  (click)="goToSignIn($event)" class="btn"><span>Sign In</span><ion-icon class="icon-right" name="arrow-forward-outline"></ion-icon></button>
+                </div>
+            </card-actions>
+          </form>
+      </card-content>
+</card>

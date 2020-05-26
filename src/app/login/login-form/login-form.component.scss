@@ -1,0 +1,11 @@
+@import 'abstracts/variables';
+.login-card{
+    min-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba($color-white, 0);
+    box-shadow: none;
+    color: black;
+  }
+  

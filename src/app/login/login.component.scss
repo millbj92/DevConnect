@@ -1,0 +1,73 @@
+@import 'abstracts/variables';
+.background{
+  background-image: linear-gradient(
+      135deg,
+      rgba($color-primary, 0.9) 0%,
+      rgba($color-white, 0.4) 20%,
+      rgba($color-white,  0) 50%,
+      rgba($color-white, 0.4) 80%,
+      rgba($color-primary, 0.9) 100%
+    ), url('../../styles/images/Tdk2J1.jpg');
+    background-size: cover;
+}
+.login-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    //background-image: linear-gradient(to right bottom,$color-secondary,$color-secondary-dark);
+    
+}
+
+.thanks-container{
+  padding: 10rem;
+  font-size: 2rem;
+}
+
+.status-container{
+  font-size: 1.6rem;
+  margin-top: 9rem;
+  color: transparent;
+  transition: all .2s;
+
+   &.active{
+      margin-top: 1rem;
+      color: $color-primary;
+   }
+}
+
+.login-slider{
+  width: 150rem;
+}
+
+.default-message{
+  font-size: $default-font-size;
+  opacity: 0;
+  transform: translateY(-2rem);
+  transition: all .2s ease-in;
+}
+
+.message-error{
+  color: $color-warn;
+}
+
+.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.login-card{
+  min-height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba($color-white, 0);
+  box-shadow: none;
+  color: black;
+}
+
+
+
+

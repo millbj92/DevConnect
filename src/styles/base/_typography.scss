@@ -1,0 +1,91 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: $default-font-size;
+    line-height: 1.7;
+    color: $color-dark-gray;
+  }
+
+  .heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    color: $color-secondary-darkest;
+    letter-spacing: 2px;
+    align-self: center;
+    justify-self: center;
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, .2); 
+}
+
+
+.heading-primary{
+  color: $color-secondary-darkest;
+  text-transform: uppercase;
+  //-webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin-top: 10rem;
+  text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+
+  &--main {
+    display: block;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: .5rem;
+    //text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+    //animation: moveInLeft 1s ease-out;
+    
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 4rem;
+    }
+  }
+
+  &--sub {
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+    //sanimation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+  }
+}
+
+.default-message{
+  font-size: $default-font-size;
+  opacity: 0;
+  transform: translateY(-2rem);
+  transition: all .2s ease-in;
+}
+
+.message-error{
+  color: $color-warn;
+}
+
+.active{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.welcome-message{
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  font-size: 10rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(100rem);
+  &-small{
+    color: $color-white;
+    font-size:  4rem;
+    //text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+  //opacity: 0;
+  //transform: translateY(100rem)
+}

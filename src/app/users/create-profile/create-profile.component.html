@@ -1,0 +1,78 @@
+<div class="create-container">
+    <div  class="welcome-container">
+        <div *ngIf="doWelcome" [@messageAnimation]="this.currentIndex" (@messageAnimation.done)="onAnimationDoneEvent($event)">
+            <div *ngFor="let m of messages; index as i">
+                <h1 [attr.data-index]="i" *ngIf="this.currentIndex == i" [class]="m.class">{{m.message}}</h1>
+            </div>
+        </div>
+        <div [@fadeInAnimation]="this.nameState" (@fadeInAnimation.done)="onAnimationDoneEvent($event)"   *ngIf="doForm" style="height: 100; width: 100%;">
+            <card class="login-card">
+                <card-header style="display: flex; flex-direction: column;">
+                  <h2  class="heading-secondary">Let's start with the basics</h2>
+                  <h4 style="text-align: center; margin-top: 2rem;">What's your name?</h4>
+                </card-header>
+                <card-content style="margin-top: 5rem;">
+                    <form class="form">
+                        <form-group>
+                          <input
+                          [(ngModel)]="firstName"
+                          autocomplete="given-name"
+                          type="text"
+                          class="form-input"
+                          placeholder="First Name"
+                          id="firsename"
+                          name="firstname"
+                          required
+                        />
+                        <label for="firstname" class="input-label">
+                          First Name
+                        </label>
+                        </form-group>
+                        <form-group>
+                          <input
+                          autocomplete="family-name"
+                          type="text"
+                          class="form-input"
+                          placeholder="Last Name"
+                          id="lastname"
+                          name="lastname"
+                          required
+                        />
+                        <label for="lastname" class="input-label">
+                          Last Name
+                        </label>
+                        </form-group>
+                        <card-actions style="display: flex; justify-content: center; margin-top: 4rem;">
+                            <div class="card-button-container" style="justify-content: flex-end;">
+                              <button (click)="goToBirthday()" class="btn"><span>Next</span><ion-icon class="icon-right" name="arrow-forward-outline"></ion-icon></button>
+                            </div>
+                        </card-actions>
+                      </form>
+                  </card-content>
+            </card>
+        </div>
+        <div [@fadeInAnimation]="this.birthdayState" (@fadeInAnimation.done)="onAnimationDoneEvent($event)"   *ngIf="doBirthday" style="height: 100; width: 100%;">
+            <card class="login-card">
+                <card-header style="display: flex; flex-direction: column;">
+                  <h2  class="heading-secondary">Thanks {{firstName}}!</h2>
+                  <h4 style="text-align: center; margin-top: 2rem;">What about your birthday?</h4>
+                </card-header>
+                <card-content style="margin-top: 5rem;">
+                    <form class="form">
+                            <form-group>
+                                <date-picker></date-picker>
+                                
+                              </form-group>
+                        <card-actions style="display: flex; justify-content: center; margin-top: 4rem;">
+                            <div class="card-button-container" style="justify-content: flex-end;">
+                              <button class="btn"><span>Next</span><ion-icon class="icon-right" name="arrow-forward-outline"></ion-icon></button>
+                            </div>
+                        </card-actions>
+                      </form>
+                  </card-content>
+            </card>
+        </div>
+    </div>
+</div>
+
+

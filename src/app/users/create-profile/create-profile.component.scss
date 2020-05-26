@@ -1,0 +1,33 @@
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'base/typography';
+.create-container{
+    background-image: linear-gradient(to right bottom, $color-secondary, $color-secondary-medium);
+    height: 100vh;
+    overflow: hidden;
+}
+  
+  .welcome-container{
+    padding: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  
+.login-card{
+  min-height: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba($color-white, 0);
+  box-shadow: none;
+  color: black;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple{
+  background-color: $color-primary!important;
+}
+
